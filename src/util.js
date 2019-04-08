@@ -1,7 +1,7 @@
 // 工具函数库
 import config from './config'
 export function get (url) {
-  return new Promise((resolve, reject) => {
+  return new Promise((reslove, reject) => {
     wx.request({
       url: config.host + url,
       success: function (res) {

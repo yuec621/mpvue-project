@@ -7,12 +7,11 @@ const CONF = {
     qcloudSecretKey:'FG7j7GApCKYOzMYXfchaP380GKfmeDa6',
     wxMessageToken:'weixinmsgtoken',
     networkTimeout:30000,
-
     port: '5758',
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: 'wxf0e526d65812b31b',
+    appId: 'wxf0e526d65812b31',
 
     // 微信小程序 App Secret
     appSecret: '',
