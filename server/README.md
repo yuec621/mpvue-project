@@ -96,6 +96,36 @@ koa-weapp-demo
    * 如果不提供 MySQL 配置，模式会使用自动配置好的本地镜像中的 MySQL 储存信息
    * 具体查看文档-登录态储存和校验
    **/
+
+  /*
+  安装mysql压缩包的坑：1.安装5.7在根目录下执行mysqld --install确实文件
+  下载 vcredist 地址：https://www.microsoft.com/zh-CN/download/details.aspx?id=40784；
+  2.环境变量里的路径path要写文件所在位置如：C:\mysql-5.7.24-winx64\bin
+  3.C:\mysql-5.7.24-winx64\data中的文件必须为空，然后在C:\mysql-5.7.24-winx64\bin再执行：1.mysqld --install
+                                  2.在net stop mysql状态下执行mysqld --initialize-insecure --user=mysql
+                                  3.net start mysql如：C:\mysql-5.7.24-winx64>net start mysql
+                                  MySQL 服务正在启动 .
+                                  MySQL 服务已经启动成功。
+                                  4.
+C:\mysql-5.7.24-winx64>mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+成功了
+
+  */
+
+
   mysql: {
     host: 'localhost',
     port: 3306,
