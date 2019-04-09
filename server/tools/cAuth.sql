@@ -14,6 +14,8 @@
  Date: 08/10/2017 22:22:52 PM
 */
 
+
+
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -35,3 +37,9 @@ CREATE TABLE `cSessionInfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='会话管理用户信息';
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+/*
+执行node tools/initdb.js的坑：mysql5.7版本
+下一步： npm install wafer2-client-sdk --save
+
+*/
