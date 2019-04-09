@@ -8,14 +8,14 @@
     <YearProgress></YearProgress>
     <button v-if='userinfo.openId'  @click='scanBook'
      class="btn">添加图书</button>
-    <!-- <button open-type="getUserInfo" lang="zh_CN" class="btn" @getuserinfo="login">点击登录</button> -->
+    <button v-else  open-type="getUserInfo" lang="zh_CN" class="btn" @getuserinfo="login">点击登录</button>
   </div>
 </template>
 <script>
 import qcloud from "wafer2-client-sdk";
 
 import YearProgress from "@/components/YearProgress";
-import { get, showSuccess } from "@/util";
+import { get, showSuccess,post } from "@/util";
 
 import config from "@/config";
 export default {
@@ -31,11 +31,23 @@ export default {
     };
   },
   methods: {
+     async addBook(isbn){
+         const res=await post('/weapp/addbook',{
+             isbn,
+             openid:this.userinfo.openId
+         })
+         if(res.code==0&&res.data.title){
+             showSuccess('添加成功','{res.data.title}添加成功')
+         }
+      },
     scanBook() {
       // 允许从相机和相册扫码
       wx.scanCode({
-        success(res) {
-          console.log(res);
+        success:(res)=> {
+            if(res.result){
+                 this.addBook(res.result);
+            }
+         
         }
       });
     },
