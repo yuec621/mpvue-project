@@ -2,7 +2,8 @@
   "pages": [
     "pages/me/main",
     "pages/books/main",
-    "pages/comments/main"
+    "pages/comments/main",
+    "pages/mock/mock"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,24 +36,6 @@
  
   ],
 
-    "items": [{
-      "name": "书籍",
-      "pagePath": "pages/books/main",
-      "icon": "static/img/book.png",
-      "activeIcon": "static/img/book-active.png"
-    },  {
-      "name": "评论",
-      "pagePath": "pages/comments/main",
-      "icon": "static/img/todo.png",
-      "activeIcon": "static/img/todo-active.png"
-    },
-    
-    {
-      "name": "我的",
-      "pagePath": "pages/me/main",
-      "icon": "static/img/me.png",
-      "activeIcon": "static/img/me-active.png"
-    }],
-    "position": "bottom"
+        "position": "bottom"
   }
 }

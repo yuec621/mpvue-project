@@ -21,7 +21,7 @@
 <script>
 import qcloud from 'wafer2-client-sdk'
 import YearProgress from '@/components/YearProgress'
-import {showSuccess} from '@/util'
+import {showSuccess,post} from '@/util'
 import config from '@/config'
 
 export default {
@@ -31,18 +31,28 @@ export default {
   data () {
     return {
       userinfo: {
-        avatarUrl: 'http://image.shengxinjing.cn/rate/unlogin.png',
-        nickName: ''
+        avatarUrl: '../../../static/img/unlogin.png',
+        nickName: '点击登录'
       }
     }
   },
   methods: {
+  async addBook(isbn){
+    console.log(isbn)
+    const res=await post('/weapp/addbook',{isbn,
+    openid:this.userinfo.openId
+    })
+    if(res.code==0&&res.data.title){
+      showSuccess('添加成功',`${res.data.title}添加成功`)
+    }
+    },
 
     scanBook () {
       wx.scanCode({
         success: (res) => {
           if (res.result) {
-            console.log(res.result)
+            this.addBook(res.result)
+            // console.log(res.result)
           }
         }
       })
