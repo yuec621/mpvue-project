@@ -7,7 +7,8 @@
 ``` bash
 # 初始化项目
 vue init mpvue/mpvue-quickstart myproject
-cd myproject
+cd myproject---npm run dev
+cd server----npm run dev
 
 # 安装依赖
 yarn
