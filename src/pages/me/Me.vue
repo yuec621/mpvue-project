@@ -46,7 +46,9 @@ export default {
   },
   methods: {
   async addBook(isbn){
-    //878258004077
+    // 9787536692930
+    //https://book.douban.com/subject_search?search_text=9787536692930
+
     console.log(isbn)
     const res=await post('/weapp/addbook',{isbn,
     openid:this.userinfo.openId

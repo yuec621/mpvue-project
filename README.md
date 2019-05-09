@@ -39,7 +39,10 @@ npm run build --report
 3.建项目：cloudFn----,
 4.在main.js中启动云环境：wx.cloud.init(),
 5.在具体的项目中调用云函数
-
+# 获取网络请求
+在douban中执行：cnpm install axios --save
+#数据解密
+cnpm install doubanbook --save(个人开发)
 ```
 
 
