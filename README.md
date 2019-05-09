@@ -33,6 +33,14 @@ npm build:my
 
 # 生成 bundle 分析报告
 npm run build --report
+# 云开发步骤
+1.app.json中设置："cloud":true
+2.project.configjson中："cloudfunctionRoot": "cloudFn",
+3.建项目：cloudFn----,
+4.在main.js中启动云环境：wx.cloud.init(),
+5.在具体的项目中调用云函数
+
 ```
+
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

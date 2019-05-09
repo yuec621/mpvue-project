@@ -1,12 +1,5 @@
 ﻿<template>
-  <!-- <div class="container">
-		<div class="userinfo">
-			<img :src="userinfo.avatarUrl" alt=""/>
-			<p>{{userinfo.nickName}}</p>
-		</div>
-		<YearProgress></YearProgress>
-		<button @click="scanBook" class="btn">添加图书</button>
-  </div> -->
+ 
 	<div class="container">
     <div class="userinfo" >
       <img :src="userinfo.avatarUrl" alt="">
@@ -25,6 +18,21 @@ import {showSuccess,post} from '@/util'
 import config from '@/config'
 
 export default {
+  //调用云函数
+  created(){
+     wx.cloud.callFunction({
+       name:'login',
+       data:{
+         a:10,
+         b:12
+       },
+       complete:(res)=>{
+         console.log(res)
+       }
+     })
+  },
+
+ 
   components: {
     YearProgress
   },
@@ -38,6 +46,7 @@ export default {
   },
   methods: {
   async addBook(isbn){
+    //878258004077
     console.log(isbn)
     const res=await post('/weapp/addbook',{isbn,
     openid:this.userinfo.openId

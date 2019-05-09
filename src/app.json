@@ -1,4 +1,5 @@
 {
+  "cloud":true,
   "pages": [
     "pages/me/main",
     "pages/books/main",
