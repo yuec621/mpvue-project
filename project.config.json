@@ -14,7 +14,7 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"qcloudRoot": "server/",
-	"cloudfunctionRoot": "cloudFn",
+	"cloudfunctionRoot": "cloudFn/",
 	"compileType": "miniprogram",
 	"libVersion": "2.6.4",
 	"appid": "wxf0e526d65812b31b",
